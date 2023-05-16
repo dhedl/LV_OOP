@@ -1,9 +1,9 @@
-from ispit import ispis_ispita
+from ispit import ispit
 
 
 def ispis_studenta(student):
-    print(f"\tStudent {student['ime']} {student['prezime']} je prijavio:")
-    ispis_ispita(student['ispit'])
+    print(f"\tStudent {student.ime} {student.prezime} je prijavio:")
+    student.ispit.ispis()
 
 
 def ispis_svih_studenata(studenti):

@@ -1,6 +1,6 @@
 from kolegij import get_kolegij
 from datetime import date
-from utilities import unos_intervala
+from utilities import unos_intervala, unos_datuma
 from .ispit import Ispit
 
 
@@ -13,8 +13,6 @@ def unos_ispita(kolegiji, redni_broj):
     odabrani_kolegij = unos_intervala(1, len(kolegiji))
     kolegij = kolegiji[odabrani_kolegij - 1]
 
-    dan = int(input(f"Unesite dan {redni_broj}. ispita: "))
-    mjesec = int(input(f"Unesite mjesec {redni_broj}. ispita: "))
-    godina = int(input(f"Unesite godinu {redni_broj}.  ispita: "))
-    datum = date(godina, mjesec, dan)
+    datum = unos_datuma(f"Unesite dan {redni_broj}. ispita: ")
+
     return Ispit(kolegij, datum)
